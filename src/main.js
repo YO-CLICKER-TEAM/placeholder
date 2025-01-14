@@ -23,18 +23,41 @@ document.querySelector('#app').innerHTML = `
             </a>
         </div>
     </div>
+     <div class="video-popup" id="videoPopup">
+        <div class="video-container">
+            <h1 style="color: white;"v>Pablo saluda</h1>
+            <video id="videoPlayer" controls>
+                <source src="https://i.imgur.com/95lW3t7.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
 `
 
 const logoContainer = document.getElementById('logoContainer');
 const popup = document.getElementById('popup');
 const closeBtn = document.getElementById('closeBtn');
 const background = document.getElementById('background');
+const videoPopup = document.getElementById('videoPopup');
+const videoPlayer = document.getElementById('videoPlayer');
 
 logoContainer.addEventListener('click', () => {
     popup.style.display = 'block';
     setTimeout(() => {
         popup.classList.add('active');
     }, 10);
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'v') {
+        videoPopup.classList.add('active');
+        videoPlayer.play();
+    }
+});
+
+videoPlayer.addEventListener('ended', () => {
+    videoPopup.classList.remove('active');
 });
 
 function closePopup() {
