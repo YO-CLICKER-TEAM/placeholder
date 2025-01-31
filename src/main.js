@@ -21,6 +21,9 @@ document.querySelector('#app').innerHTML = `
                 </svg>
                 Join our Discord Server
             </a>
+            <a href="https://auth.yo-clicker.app/" target="_blank" rel="noopener noreferrer" class="discord-btn">
+                Login/Register
+            </a>
         </div>
     </div>
      <div class="video-popup" id="videoPopup">
